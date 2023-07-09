@@ -16,7 +16,7 @@ export default function KeepersPlayers (props) {
             const score = 100 - (Math.round((players[1].value / players[0].value) * 100));
             const scoreColor = score > 84 ? 'green' : score > 64 ? 'green-orange' : score > 44 ? 'orange' : 'red';
             return (
-              <div className="player">
+              <div className="player" key={player.adp}>
                 <div className="best">
                   <div className="icon"><CheckIcon sx={{ fontSize: 18 }} /></div> <strong>Best option</strong>
                   <div className="confidence">
@@ -34,7 +34,7 @@ export default function KeepersPlayers (props) {
             )
           } else if (index === 1) {
             return (
-              <div className="player">
+              <div className="player" key={player.adp}>
                 <div className="best"><strong>Next best option</strong></div>
                 <div className="player-info">
                   <div><h3>{player.name}</h3></div>

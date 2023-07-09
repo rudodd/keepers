@@ -9,9 +9,11 @@ import keepers from '../keepers';
 
 // Import components
 import TeamAccordion from '../components/TeamAccordion';
+import { CircularProgress } from '@mui/material';
 
 export default function Home() {
 
+  const [loading, setLoading] = useState(true);
   const [currentData, setCurrentData] = useState(null);
   const [previousData, setPreviousData] = useState(null);
   const [teamState, setTeamState] = useState([]);
@@ -132,20 +134,23 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    console.log(currentData);
-  }, [currentData])
+    if (!empty(currentData) && !empty(previousData)) {
+      setTeams();
+    }
+  }, [currentData, previousData])
 
   useEffect(() => {
-    console.log(teams);
-  }, [teams])
+    if (!empty(teamState)) {
+      setTimeout(() => {
+        calculateValues();
+      }, 2500);
+    }
+  })
 
   useEffect(() => {
-    console.log(teamState);
-    calculateValues();
-  }, [teamState])
-
-  useEffect(() => {
-    console.log(valuesArray)
+    if (!empty(valuesArray)) {
+      setLoading(false);
+    }
   }, [valuesArray])
 
   return (
@@ -156,10 +161,16 @@ export default function Home() {
       </Head>
       <h1>Tummy Sleeper's <span>Keepers</span></h1>
       <p>The most accurate algorithmically generated keeper predictions for the Hateful 8 on the planet!</p>
+      {loading &&
+        <div className="loading-container">
+          <h3>Crunching the numbers...</h3>
+          <div><CircularProgress /></div>
+        </div>
+      }
       {!empty(valuesArray) &&
         <div className="team-container">
-          {valuesArray.map((team) => (
-            <TeamAccordion team={team} />
+          {valuesArray.map((team, key) => (
+            <TeamAccordion key={`${team.name}-${key}`} team={team} />
           ))}
         </div>
       }

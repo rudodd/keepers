@@ -33,6 +33,19 @@ a {
   margin: 1.5rem 0;
 }
 
+.app-container .loading-container {
+  min-height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container .loading-container h3 {
+  color: #8FCAF9;
+  font-weight: 400;
+}
+
 .team-container {
   display: flex;
   flex-direction: column;
@@ -123,6 +136,7 @@ a {
 
 .keeper-container .player-info h3 {
   margin: 0;
+  font-size: 1.15rem;
 }
 
 
