@@ -6,7 +6,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import { Avatar } from '@mui/material';
-import KeepersTable from './KeepersTable';
+import KeepersPlayers from './KeepersPlayers';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
@@ -26,7 +26,7 @@ export default function TeamAccordion(props) {
           <h3>{team.name}</h3>
         </AccordionSummary>
         <AccordionDetails>
-          <KeepersTable players={team.players} />
+          <KeepersPlayers players={team.players} />
         </AccordionDetails>
       </Accordion>
     </div>

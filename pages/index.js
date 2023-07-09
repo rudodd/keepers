@@ -88,7 +88,7 @@ export default function Home() {
         let posStrength;
         switch (player.position) {
           case 'QB':
-            posStrength = 0.35;
+            posStrength = 0.4;
             break;
           case 'WR':
             posStrength = 0.75;
@@ -154,9 +154,8 @@ export default function Home() {
         <title>Tummy Sleeper's Keepers</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Tummy Sleeper's Keepers</h1>
+      <h1>Tummy Sleeper's <span>Keepers</span></h1>
       <p>The most accurate algorithmically generated keeper predictions for the Hateful 8 on the planet!</p>
-      <button onClick={() => setTeams()}>Get Keepers</button>
       {!empty(valuesArray) &&
         <div className="team-container">
           {valuesArray.map((team) => (
