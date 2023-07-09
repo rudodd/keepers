@@ -1,8 +1,14 @@
+// Import library functionality
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head';
+
+// Import custom functionality
 import { empty } from '../helpers';
 import teams from '../teams';
 import keepers from '../keepers';
+
+// Import components
+import TeamAccordion from '../components/TeamAccordion';
 
 export default function Home() {
 
@@ -62,7 +68,15 @@ export default function Home() {
       team = {...team, players: players};
       tempTeamState.push(team);
     })
-    setTeamState(tempTeamState);
+    setTeamState(tempTeamState.sort(function (a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    }));
   }
 
   const calculateValues = () => {
@@ -89,7 +103,7 @@ export default function Home() {
             posStrength = 0;
         }
         const calculateScore = () => {
-          if (!empty(player.adp.round)) {
+          if (!empty(player.adp.round) && round != 1 && round != 2) {
             if ((round - player.adp.round) * posStrength > 0) {
               return Number((((round - player.adp.round) * posStrength) / player.adp.adp) * 10).toFixed(2);
             } else {
@@ -99,7 +113,7 @@ export default function Home() {
             return 0;
           }
         }
-        playerValues.push({name: player.name, value: calculateScore(), adp: player.adp.adp, adpRound: player.adp.round, draftRound: player.round, keeper: isKeeper(player)});
+        playerValues.push({name: player.name, value: calculateScore(), adp: player.adp.adp, adpRound: player.adp.round, draftRound: round, keeper: isKeeper(player)});
       })
       teamValues.push({name: team.name, players: playerValues.sort((a,b) => b.value - a.value)})
     })
@@ -144,40 +158,11 @@ export default function Home() {
       <p>The most accurate algorithmically generated keeper predictions for the Hateful 8 on the planet!</p>
       <button onClick={() => setTeams()}>Get Keepers</button>
       {!empty(valuesArray) &&
-        <>
+        <div className="team-container">
           {valuesArray.map((team) => (
-            <div className="team-container">
-              <h3>{team.name}</h3>
-              <div className="keeper-container">
-                <div className="player">
-                  <div className="name"><strong>Name</strong></div>
-                  <div className="round"><strong>Draft round</strong></div>
-                  <div className="adp"><strong>ADP / ADP Round</strong></div>
-                </div>
-                {team.players.map((player, index) => {
-                  if (index === 0) {
-                    return (
-                      <div className="player">
-                        <div className="name">1. {player.name}</div>
-                        <div className="round">{player.keeper ? `${player.draftRound} (Keeper)` : player.draftRound}</div>
-                        <div className="adp">{player.adp} / {player.adpRound}</div>
-                        <div className="confidence">Confidence: {Math.round((team.players[1].value / team.players[0].value) * 100)}%</div>
-                      </div>
-                    )
-                  } else if (index === 1) {
-                    return (
-                      <div className="player">
-                        <div className="name">2. {player.name}</div>
-                        <div className="round">{player.keeper ? `${player.draftRound} (Keeper)` : player.draftRound}</div>
-                        <div className="adp">{player.adp} / {player.adpRound}</div>
-                      </div>
-                    )
-                  }
-                })}
-              </div>
-            </div>
+            <TeamAccordion team={team} />
           ))}
-        </>
+        </div>
       }
     </div>
   )

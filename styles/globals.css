@@ -1,14 +1,29 @@
 html,
 body {
-  padding: 20px;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background: #071E3F;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.app-container {
+  padding: 1.5rem;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem 0;
+}
+
+.MuiAccordionSummary-content {
+  display: flex;
+  gap: 0 1rem;
 }
 
 .team-container h3 {
