@@ -125,11 +125,9 @@ export default function Home() {
   useEffect(() => {
     if (empty(currentData)) {
       fetchCurrent();
-      console.log('fetch current called');
     }
     if (empty(previousData)) {
       fetchPrevious();
-      console.log('fetch previous called');
     }
   }, []);
 
