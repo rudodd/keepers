@@ -1,5 +1,5 @@
 // Import library functionality
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Import components
 import Accordion from '@mui/material/Accordion';
@@ -12,11 +12,16 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function TeamAccordion(props) {
 
-  const  { team } = props;
+  const  { team, expanded } = props;
+  const [isExpanded, setIsExpanded] = useState(expanded);
+
+  useEffect(() => {
+    setIsExpanded(expanded)
+  }, [expanded])
 
   return (
     <div className="accordion-container">
-      <Accordion>
+      <Accordion expanded={isExpanded} onClick={() => setIsExpanded(!isExpanded)}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls={`${team.name}-keepers`}

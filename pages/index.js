@@ -10,6 +10,8 @@ import keepers from '../keepers';
 // Import components
 import TeamAccordion from '../components/TeamAccordion';
 import { CircularProgress } from '@mui/material';
+import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
+import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
 
 export default function Home() {
 
@@ -18,6 +20,7 @@ export default function Home() {
   const [previousData, setPreviousData] = useState(null);
   const [teamState, setTeamState] = useState([]);
   const [valuesArray, setValuesArray] = useState([])
+  const [expanded, setExpanded] = useState(false);
 
   const fetchCurrent = () => {
     fetch('/api/adp-current')
@@ -167,8 +170,20 @@ export default function Home() {
       }
       {!empty(valuesArray) &&
         <div className="team-container">
+          <button className="expand-button" onClick={() => setExpanded(!expanded)}>
+            {!expanded && 
+              <>
+                <UnfoldMoreIcon sx={{ width: 16, height: 16}} /> Expand all
+              </>
+            }
+            {expanded && 
+              <>
+                <UnfoldLessIcon sx={{ width: 16, height: 16}} /> Collapse all
+              </>
+            }
+          </button>
           {valuesArray.map((team, key) => (
-            <TeamAccordion key={`${team.name}-${key}`} team={team} />
+            <TeamAccordion key={`${team.name}-${key}`} team={team} expanded={expanded} />
           ))}
         </div>
       }
