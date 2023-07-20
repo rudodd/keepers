@@ -48,7 +48,7 @@ export default function Home() {
   }
 
   const nameForCompare = (name) => {
-    return name.replace(' ', '').replace('.', '').replace(`'`, '').toLowerCase();
+    return name.replaceAll(' II', '').replaceAll(' ', '').replaceAll('.', '').replaceAll(`'`, '').toLowerCase();
   }
 
   const isKeeper = (player) => {
@@ -68,7 +68,7 @@ export default function Home() {
 
   const getADP = (player, keeper = false) => {
     const data = keeper ? previousData : currentData;
-    let playerData = data.filter((prevPlayer) => nameForCompare(prevPlayer.name) == nameForCompare(player.name));
+    let playerData = data.filter((prevPlayer) =>  nameForCompare(prevPlayer.name) == nameForCompare(player.name));
     return !empty(playerData) ? createADPObj(playerData[0].adp) : {apd: null, round: null};
   }
 
@@ -90,7 +90,7 @@ export default function Home() {
 
   const getValueRound = (adp, ecr) => {
     let round = 0;
-    const roughtRound = (Math.round(((adp.adp + ecr.ecr) / 2)) / 8)
+    const roughtRound = !empty(ecr.ecr) ? (Math.round(((adp.adp + ecr.ecr) / 2)) / 8) : Math.round(adp.adp) / 8;
     if (roughtRound % 1 === 0) {
       round = Math.trunc(roughtRound);
     } else {
