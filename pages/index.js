@@ -18,6 +18,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [currentData, setCurrentData] = useState(null);
   const [previousData, setPreviousData] = useState(null);
+  const [ecrData, setECR] = useState(null);
   const [teamState, setTeamState] = useState([]);
   const [valuesArray, setValuesArray] = useState([])
   const [expanded, setExpanded] = useState(false);
@@ -35,6 +36,14 @@ export default function Home() {
       .then((res) => {
         res.json()
           .then((data) => setPreviousData(data.players));
+      })
+  }
+
+  const fetchECR = () => {
+    fetch('/api/fp-ecr')
+      .then((res) => {
+        res.json()
+          .then((data) => setECR(data));
       })
   }
 
@@ -63,12 +72,39 @@ export default function Home() {
     return !empty(playerData) ? createADPObj(playerData[0].adp) : {apd: null, round: null};
   }
 
+  const createECRObj = (ecr) => {
+    let round = 0;
+    const roughtRound = (Math.round(ecr) / 8)
+    if (roughtRound % 1 === 0) {
+      round = Math.trunc(roughtRound);
+    } else {
+      round = Math.trunc(roughtRound + 1);
+    }
+    return {ecr: Math.round(ecr), round: round};
+  }
+
+  const getECR = (player) => {
+    let playerData = ecrData.filter((prevPlayer) => nameForCompare(prevPlayer.name) == nameForCompare(player.name));
+    return !empty(playerData) ? createECRObj(playerData[0].ecr) : {ecr: null, round: null};
+  }
+
+  const getValueRound = (adp, ecr) => {
+    let round = 0;
+    const roughtRound = (Math.round(((adp.adp + ecr.ecr) / 2)) / 8)
+    if (roughtRound % 1 === 0) {
+      round = Math.trunc(roughtRound);
+    } else {
+      round = Math.trunc(roughtRound + 1);
+    }
+    return {round: round, rank: ((adp.adp + ecr.ecr) / 2)}
+  }
+
   const setTeams = () => {
     const tempTeamState = [];
     teams.forEach((team) => {
       const players = []
       team.players.forEach((player) => {
-        players.push({...player, adp: getADP(player), round: isKeeper(player) ? getADP(player, true).round : player.round});
+        players.push({...player, adp: getADP(player), ecr: getECR(player), valueRound: getValueRound(getADP(player), getECR(player)), round: isKeeper(player) ? getADP(player, true).round : player.round});
       })
       team = {...team, players: players};
       tempTeamState.push(team);
@@ -108,9 +144,9 @@ export default function Home() {
             posStrength = 0;
         }
         const calculateScore = () => {
-          if (!empty(player.adp.round) && round != 1 && round != 2) {
-            if ((round - player.adp.round) * posStrength > 0) {
-              return Number((((round - player.adp.round) * posStrength) / player.adp.adp) * 10).toFixed(2);
+          if (!empty(player.valueRound.round) && round != 1 && round != 2) {
+            if ((round - player.valueRound.round) * posStrength > 0) {
+              return Number((((round - player.valueRound.round) * posStrength) / player.valueRound.rank) * 10).toFixed(2);
             } else {
               return 0;
             }
@@ -118,7 +154,7 @@ export default function Home() {
             return 0;
           }
         }
-        playerValues.push({name: player.name, value: calculateScore(), adp: player.adp.adp, adpRound: player.adp.round, draftRound: round, keeper: isKeeper(player)});
+        playerValues.push({name: player.name, value: calculateScore(), adp: player.adp.adp, adpRound: player.adp.round, ecr: player.ecr.ecr, ecrRound: player.ecr.round, valueRound: player.valueRound.round, draftRound: round, keeper: isKeeper(player)});
       })
       teamValues.push({name: team.name, players: playerValues.sort((a,b) => b.value - a.value)})
     })
@@ -132,13 +168,16 @@ export default function Home() {
     if (empty(previousData)) {
       fetchPrevious();
     }
+    if (empty(ecrData)) {
+      fetchECR();
+    }
   }, []);
 
   useEffect(() => {
-    if (!empty(currentData) && !empty(previousData)) {
+    if (!empty(currentData) && !empty(previousData) && !empty(ecrData)) {
       setTeams();
     }
-  }, [currentData, previousData])
+  }, [currentData, previousData, ecrData])
 
   useEffect(() => {
     if (!empty(teamState)) {

@@ -152,6 +152,30 @@ a {
   font-size: 1.15rem;
 }
 
+.keeper-container .player-info .stat-table {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.8rem;
+  padding: 
+}
+
+.keeper-container .player-info .stat-table table {
+  width: 100%;
+}
+
+.keeper-container .player-info .stat-table table thead {
+  background: rgba(0,0,0, 0.6);
+  color: white;
+}
+
+.keeper-container .player-info .stat-table table th,
+.keeper-container .player-info .stat-table table td {
+  padding: 0.25rem 0.5rem;
+  text-align: left;
+}
+
+.keeper-container .player-info .stat-table table tbody tr:last-of-type {
+  background: rgba(0,0,0, 0.1)
+}
 
 * {
   box-sizing: border-box;
