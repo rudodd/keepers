@@ -61,7 +61,7 @@ export default function KeepersPlayers (props) {
                 <div className="player-info">
                   <div><h3>{player.name}</h3></div>
                   <div><strong>Keep at round:</strong> {player.keeper ? `${player.draftRound} (Keeper)` : player.draftRound}</div>
-                  <div><strong>Valued at Round:</strong> {player.valueRound}</div>
+                  <div><strong>Valued at round:</strong> {player.valueRound}</div>
                   <div className="stat-table">
                     <table cellPadding={0} cellSpacing={0}>
                       <thead>
