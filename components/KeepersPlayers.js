@@ -27,8 +27,30 @@ export default function KeepersPlayers (props) {
                 <div className="player-info">
                   <div><h3>{player.name}</h3></div>
                   <div><strong>Keep at round:</strong> {player.keeper ? `${player.draftRound} (Keeper)` : player.draftRound}</div>
-                  <div><strong>Current ADP Round:</strong> {player.adpRound}</div>
-                  <div><strong>Current ADP:</strong> {player.adp}</div>
+                  <div><strong>Valued at Round:</strong> {player.valueRound}</div>
+                  <div className="stat-table">
+                    <table cellPadding={0} cellSpacing={0}>
+                      <thead>
+                        <tr>
+                          <th>&nbsp;</th>
+                          <th>ADP</th>
+                          <th>ECR</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>Rank</th>
+                          <td>{player.adp}</td>
+                          <td>{player.ecr}</td>
+                        </tr>
+                        <tr>                      
+                          <th>Round</th>
+                          <td>{player.adpRound}</td>
+                          <td>{player.ecrRound}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             )
@@ -39,8 +61,30 @@ export default function KeepersPlayers (props) {
                 <div className="player-info">
                   <div><h3>{player.name}</h3></div>
                   <div><strong>Keep at round:</strong> {player.keeper ? `${player.draftRound} (Keeper)` : player.draftRound}</div>
-                  <div><strong>Current ADP Round:</strong> {player.adpRound}</div>
-                  <div><strong>Current ADP:</strong> {player.adp}</div>
+                  <div><strong>Valued at Round:</strong> {player.valueRound}</div>
+                  <div className="stat-table">
+                    <table cellPadding={0} cellSpacing={0}>
+                      <thead>
+                        <tr>
+                          <th>&nbsp;</th>
+                          <th>ADP</th>
+                          <th>ECR</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>Rank</th>
+                          <td>{player.adp}</td>
+                          <td>{player.ecr}</td>
+                        </tr>
+                        <tr>                      
+                          <th>Round</th>
+                          <td>{player.adpRound}</td>
+                          <td>{player.ecrRound}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             )
