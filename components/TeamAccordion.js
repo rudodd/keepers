@@ -5,8 +5,10 @@ import React, { useEffect, useState } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import { Avatar } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
 import KeepersPlayers from './KeepersPlayers';
+
+// Import icons
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
