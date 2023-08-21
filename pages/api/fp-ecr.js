@@ -1,11 +1,12 @@
-// ES6 or TypeScript:
+// Import library functionality
 import * as cheerio from 'cheerio';
 
+// Scrape fantasy pros for current ECR values
 export default function handler(req, res) {
-  fetch('https://www.fantasypros.com/nfl/cheatsheets/top-ppr-players.php')
+  return fetch('https://www.fantasypros.com/nfl/cheatsheets/top-ppr-players.php')
     .then((response) => {
       if (response.ok) {
-        response.text()
+        return response.text()
           .then((text) => {
             const $ = cheerio.load(text);
             $.html();
@@ -17,11 +18,10 @@ export default function handler(req, res) {
               }
               return obj;
             }).get();
-            res.status(200).json(players);
-            // res.status(200).json(text)
+            return res.status(200).json(players);
           })
       } else {
-        res.status(response.status).json(response)
+        return res.status(response.status).json(response)
       }
     })
 }

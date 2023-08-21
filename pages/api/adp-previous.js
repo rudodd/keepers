@@ -1,13 +1,12 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
+// Fetch last year's ADP values
 export default function handler(req, res) {
-  fetch('https://fantasyfootballcalculator.com/api/v1/adp/ppr?teams=8&year=2022')
+  return fetch('https://fantasyfootballcalculator.com/api/v1/adp/ppr?teams=8&year=2022')
     .then((response) => {
       if (response.ok) {
-        response.json()
+        return response.json()
           .then((json) => res.status(200).json(json))
       } else {
-        res.status(response.status).json(response)
+        return res.status(response.status).json(response)
       }
     })
 }

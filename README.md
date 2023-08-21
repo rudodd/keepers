@@ -8,6 +8,8 @@ For each player on each team, the model compares the round at which a player cou
 
 Unfortunately, this is not a plug and play app given that leagues have different keeper rules and it requires an object of your league's team data.  To use it, you will have to modify the code to fit your league, but feel free to pull down and branch off for your own use.
 
+Live app (designed for use on mobile): [keepers.rustindodd.com](https://keepers.rustindodd.com)
+
 ## Features
 - Shows top two keepers for each team
 - Displays the round at which a player could be kept and the players ADP and ECR values
