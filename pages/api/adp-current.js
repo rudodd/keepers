@@ -1,6 +1,6 @@
 // Fetch current year ADP values
 export default function handler(req, res) {
-  return fetch('https://fantasyfootballcalculator.com/api/v1/adp/ppr?teams=8&year=2023')
+  return fetch('https://fantasyfootballcalculator.com/api/v1/adp/ppr?teams=8&year=2024')
     .then((response) => {
       if (response.ok) {
         return response.json()
