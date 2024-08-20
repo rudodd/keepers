@@ -33,7 +33,7 @@ export default function TeamAccordion(props) {
           <h3>{team.name}</h3>
         </AccordionSummary>
         <AccordionDetails>
-          <KeepersPlayers players={team.players} />
+          <KeepersPlayers players={team.players} team={team} />
         </AccordionDetails>
       </Accordion>
     </div>

@@ -6,7 +6,7 @@ import CheckIcon from '@mui/icons-material/Check';
 
 export default function KeepersPlayers (props) {
 
-  const { players } = props;
+  const { players, team } = props;
 
   return (
     <div className="team-container">
@@ -28,6 +28,7 @@ export default function KeepersPlayers (props) {
                   <div><h3>{player.name}</h3></div>
                   <div><strong>Keep at round:</strong> {player.keeper ? `${player.draftRound} (Keeper)` : player.draftRound}</div>
                   <div><strong>Valued at round:</strong> {player.valueRound}</div>
+                  <div><strong>Keeper score:</strong> {(player.value * 10)}</div>
                   <div className="stat-table">
                     <table cellPadding={0} cellSpacing={0}>
                       <thead>
@@ -57,11 +58,12 @@ export default function KeepersPlayers (props) {
           } else if (index === 1) {
             return (
               <div className="player" key={player.adp}>
-                <div className="best"><strong>Next best option</strong></div>
+                <h4>Next best option</h4>
                 <div className="player-info">
                   <div><h3>{player.name}</h3></div>
                   <div><strong>Keep at round:</strong> {player.keeper ? `${player.draftRound} (Keeper)` : player.draftRound}</div>
                   <div><strong>Valued at round:</strong> {player.valueRound}</div>
+                  <div><strong>Keeper score:</strong> {(player.value * 10).toFixed(2)}</div>
                   <div className="stat-table">
                     <table cellPadding={0} cellSpacing={0}>
                       <thead>
@@ -90,6 +92,34 @@ export default function KeepersPlayers (props) {
             )
           }
         })}
+        <div className="player">
+          <h4>Remaining players</h4>
+          <div className="player-info">
+            <div className="stat-table">
+              <table cellPadding={0} cellSpacing={0}>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Keep at round</th>
+                    <th>Valued at round</th>
+                    <th>Keeper score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {players.filter((p, index) => (index !== 0 && index !== 1)).map((p, index) => (
+                  <tr key={index}>
+                    <th>{p.name}</th>
+                    <td>{p.keeper ? `${p.draftRound} (Keeper)` : p.draftRound}</td>
+                    <td>{p.valueRound === 0 ? "No value" : p.valueRound > 18 ? "> 18" : p.valueRound}</td>
+                    <td>{(p.value * 10).toFixed(2)}</td>
+                  </tr>
+                ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   )

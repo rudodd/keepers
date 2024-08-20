@@ -52,7 +52,7 @@ export default function Home() {
 
   // Helper to convert names to a uniform lowercase string for comparison
   const nameForCompare = (name) => {
-    return name.replaceAll(' II', '').replaceAll('III', '').replaceAll(' ', '').replaceAll('.', '').replaceAll(`'`, '').toLowerCase();
+    return name.replaceAll(' II', '').replaceAll('III', '').replaceAll(' Jr.', '').replaceAll(' Sr.', '').replaceAll(' ', '').replaceAll('.', '').replaceAll(`'`, '').toLowerCase();
   }
 
   // Helper to check is a player was a keeper last year
@@ -83,7 +83,7 @@ export default function Home() {
     }
     return !empty(playerData) && metricName === 'adp' ? createMetricObj(playerData[0].adp, 'adp') 
       :  !empty(playerData) && metricName === 'ecr' ? createMetricObj(playerData[0].ecr, 'ecr') 
-      : {apd: null, round: null};
+      : {adp: null, round: null};
   }
 
   // Helper to calculate the round at which a player is valued based on ADP and ECR

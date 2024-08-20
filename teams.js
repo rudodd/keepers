@@ -3,99 +3,99 @@ const teams = [
     name: 'Chris',
     players: [
       {
-        name: "Justin Fields",
-        round: null,
-        position: "QB"
-      },
-      {
-        name: "Justin Jefferson",
-        round: "1",
-        position: "WR"
-      },
-      {
         name: "Amon-Ra St. Brown",
         round: "7",
         position: "WR"
       },
       {
-        name: "Jahan Dotson",
-        round: "14",
+        name: "Stefon Diggs",
+        round: "1",
         position: "WR"
       },
       {
-        name: "Saquon Barkley",
-        round: "3",
-        position: "RB"
+        name: "A.J. Brown",
+        round: "2",
+        position: "WR"
       },
       {
-        name: "Kenneth Walker III",
-        round: "12",
-        position: "RB"
-      },
-      {
-        name: "Taysom Hill",
-        round: null,
-        position: "TE"
-      },
-      {
-        name: "Isiah Pacheco",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "Darren Waller",
-        round: "10",
-        position: "TE"
-      },
-      {
-        name: "Travis Etienne Jr.",
+        name: "Lamar Jackson",
         round: "6",
-        position: "RB"
-      },
-      {
-        name: "Rachaad White",
-        round: "13",
-        position: "RB"
-      },
-      {
-        name: "Antonio Gibson",
-        round: "12",
-        position: "RB"
-      },
-      {
-        name: "Deon Jackson",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "Kirk Cousins",
-        round: null,
         position: "QB"
       },
       {
-        name: "Dawson Knox",
+        name: "Zack Moss",
         round: null,
+        position: "RB"
+      },
+      {
+        name: "Keaton Mitchell",
+        round: null,
+        position: "RB"
+      },
+      {
+        name: "Saquon Barkley",
+        round: "2",
+        position: "RB"
+      },
+      {
+        name: "Dalton Kincaid",
+        round: 15,
         position: "TE"
       },
       {
-        name: "Brandin Cooks",
+        name: "Zay Flowers",
+        round: "11",
+        position: "WR"
+      },
+      {
+        name: "Diontae Johnson",
+        round: "8",
+        position: "WR"
+      },
+      {
+        name: "Javonte Williams",
+        round: "10",
+        position: "RB"
+      },
+      {
+        name: "Tyjae Spears",
+        round: "16",
+        position: "RB"
+      },
+      {
+        name: "Roschon Johnson",
+        round: "15",
+        position: "RB"
+      },
+      {
+        name: "Jaleel McLaughlin",
+        round: null,
+        position: "RB"
+      },
+      {
+        name: "Aaron Jones",
+        round: 5,
+        position: "RB"
+      },
+      {
+        name: "Justin Fields",
+        round: "13",
+        position: "QB"
+      },
+      {
+        name: "Christian Watson",
         round: "4",
         position: "WR"
       },
       {
-        name: "Tampa Bay",
-        round: "18",
-        position: "DEF"
-      },
-      {
-        name: "Cleveland",
+        name: "New Orleans",
         round: null,
         position: "DEF"
       },
       {
-        name: "Cooper Kupp",
-        round: "5",
-        position: "WR"
+        name: "Darren Waller",
+        round: "6",
+        position: "TE"
       }
     ]
   },
@@ -108,82 +108,67 @@ const teams = [
         position: "QB"
       },
       {
-        name: "A.J. Brown",
+        name: "Calvin Ridley",
         round: "3",
         position: "WR"
       },
       {
-        name: "JuJu Smith-Schuster",
-        round: "4",
-        position: "WR"
-      },
-      {
-        name: "Christian Watson",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Dalvin Cook",
-        round: "1",
-        position: "RB"
-      },
-      {
-        name: "Aaron Jones",
-        round: "2",
-        position: "RB"
-      },
-      {
-        name: "George Kittle",
-        round: "8",
-        position: "TE"
-      },
-      {
-        name: "Zay Jones",
-        round: "18",
-        position: "WR"
-      },
-      {
-        name: "Jamaal Williams",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "George Pickens",
+        name: "Elijah Moore",
         round: "12",
         position: "WR"
       },
       {
-        name: "Dameon Pierce",
+        name: "Josh Downs",
+        round: null,
+        position: "WR"
+      },
+      {
+        name: "Alvin Kamara",
         round: "10",
         position: "RB"
       },
       {
-        name: "Michael Pittman Jr.",
-        round: "11",
+        name: "James Cook",
+        round: "6",
+        position: "RB"
+      },
+      {
+        name: "Sam LaPorta",
+        round: "17",
+        position: "TE"
+      },
+      {
+        name: "Joe Mixon",
+        round: "4",
+        position: "RB"
+      },
+      {
+        name: "Curtis Samuel",
+        round: null,
         position: "WR"
       },
       {
-        name: "Alexander Mattison",
+        name: "Jayden Reed",
+        round: null,
+        position: "WR"
+      },
+      {
+        name: "K.J. Osborn",
+        round: null,
+        position: "WR"
+      },
+      {
+        name: "Zach Charbonnet",
+        round: "10",
+        position: "RB"
+      },
+      {
+        name: "Kareem Hunt",
         round: null,
         position: "RB"
       },
       {
-        name: "Ray-Ray McCloud III",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Samaje Perine",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "Jameson Williams",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Las Vegas",
+        name: "Atlanta",
         round: null,
         position: "DEF"
       }
@@ -193,297 +178,7 @@ const teams = [
     name: 'Calvin',
     players: [
       {
-        name: "Justin Herbert",
-        round: "7",
-        position: "QB"
-      },
-      {
-        name: "CeeDee Lamb",
-        round: "2",
-        position: "WR"
-      },
-      {
-        name: "Chris Godwin",
-        round: "5",
-        position: "WR"
-      },
-      {
-        name: "Christian Kirk",
-        round: "10",
-        position: "WR"
-      },
-      {
-        name: "Austin Ekeler",
-        round: "1",
-        position: "RB"
-      },
-      {
-        name: "James Conner",
-        round: "3",
-        position: "RB"
-      },
-      {
-        name: "Evan Engram",
-        round: null,
-        position: "TE"
-      },
-      {
-        name: "Jerick McKinnon",
-        round: "18",
-        position: "RB"
-      },
-      {
-        name: "David Njoku",
-        round: null,
-        position: "TE"
-      },
-      {
-        name: "Rhamondre Stevenson",
-        round: "11",
-        position: "RB"
-      },
-      {
-        name: "Isaiah McKenzie",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Tyler Higbee",
-        round: null,
-        position: "TE"
-      },
-      {
-        name: "Courtland Sutton",
-        round: "9",
-        position: "WR"
-      },
-      {
-        name: "Melvin Gordon",
-        round: "16",
-        position: "RB"
-      },
-      {
-        name: "Aaron Rodgers",
-        round: "17",
-        position: "QB"
-      },
-      {
-        name: "Drake London",
-        round: "8",
-        position: "WR"
-      },
-      {
-        name: "Kenyan Drake",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "Dallas",
-        round: "16",
-        position: "DEF"
-      },
-      {
-        name: "Romeo Doubs",
-        round: "14",
-        position: "WR"
-      }
-    ]
-  },
-  {
-    name: 'Jace',
-    players: [
-      {
-        name: "Joe Burrow",
-        round: "11",
-        position: "QB"
-      },
-      {
-        name: "Keenan Allen",
-        round: "3",
-        position: "WR"
-      },
-      {
-        name: "Terry McLaurin",
-        round: "5",
-        position: "WR"
-      },
-      {
-        name: "Garrett Wilson",
-        round: "13",
-        position: "WR"
-      },
-      {
-        name: "Christian McCaffrey",
-        round: "1",
-        position: "RB"
-      },
-      {
-        name: "D'Andre Swift",
-        round: "4",
-        position: "RB"
-      },
-      {
-        name: "Travis Kelce",
-        round: "2",
-        position: "TE"
-      },
-      {
-        name: "DJ Moore",
-        round: "4",
-        position: "WR"
-      },
-      {
-        name: "Amari Cooper",
-        round: "7",
-        position: "WR"
-      },
-      {
-        name: "Latavius Murray",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "DeAndre Carter",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Tyler Boyd",
-        round: "16",
-        position: "WR"
-      },
-      {
-        name: "Kareem Hunt",
-        round: "9",
-        position: "BRB"
-      },
-      {
-        name: "Michael Gallup",
-        round: "14",
-        position: "WR"
-      },
-      {
-        name: "Adam Thielen",
-        round: "8",
-        position: "WR"
-      },
-      {
-        name: "Mack Hollins",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Baltimore",
-        round: null,
-        position: "DEF"
-      },
-      {
-        name: "Tennessee",
-        round: null,
-        position: "DEF"
-      }
-    ]
-  },
-  {
-    name: 'Cody',
-    players: [
-      {
-        name: "Geno Smith",
-        round: null,
-        position: "QB"
-      },
-      {
-        name: "Ja'Marr Chase",
-        round: "9",
-        position: "WR"
-      },
-      {
-        name: "Tyreek Hill",
-        round: "3",
-        position: "WR"
-      },
-      {
-        name: "Diontae Johnson",
-        round: "5",
-        position: "WR"
-      },
-      {
-        name: "Nick Chubb",
-        round: "2",
-        position: "RB"
-      },
-      {
-        name: "Miles Sanders",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "Dallas Goedert",
-        round: "11",
-        position: "TE"
-      },
-      {
-        name: "Najee Harris",
-        round: "1",
-        position: "RB"
-      },
-      {
-        name: "Chigoziem Okonkwo",
-        round: null,
-        position: "TE"
-      },
-      {
-        name: "Tyler Lockett",
-        round: "10",
-        position: "WR"
-      },
-      {
-        name: "Lamar Jackson",
-        round: "8",
-        position: "QB"
-      },
-      {
-        name: "Treylon Burks",
-        round: "12",
-        position: "WR"
-      },
-      {
-        name: "Deebo Samuel",
-        round: "10",
-        position: "WR"
-      },
-      {
-        name: "Gabe Davis",
-        round: "7",
-        position: "WR"
-      },
-      {
-        name: "Rondale Moore",
-        round: "14",
-        position: "WR"
-      },
-      {
-        name: "Brian Robinson",
-        round: "12",
-        position: "RB"
-      },
-      {
-        name: "Leonard Fournette",
-        round: "6",
-        position: "RB"
-      },
-      {
-        name: "Philadelphia",
-        round: null,
-        position: "DEF"
-      },
-    ]
-  },
-  {
-    name: 'Hunter',
-    players: [
-      {
-        name: "Daniel Jones",
+        name: "Brock Purdy",
         round: null,
         position: "QB"
       },
@@ -493,169 +188,54 @@ const teams = [
         position: "WR"
       },
       {
-        name: "Mike Evans",
+        name: "Chris Olave",
         round: "3",
         position: "WR"
       },
       {
-        name: "Darius Slayton",
-        round: null,
+        name: "Drake London",
+        round: "5",
         position: "WR"
       },
       {
-        name: "Derrick Henry",
-        round: "1",
-        position: "RB"
-      },
-      {
-        name: "J.K. Dobbins",
-        round: "9",
-        position: "RB"
-      },
-      {
-        name: "Mark Andrews",
+        name: "Rachaad White",
         round: "7",
-        position: "TE"
-      },
-      {
-        name: "AJ Dillon",
-        round: "9",
         position: "RB"
       },
       {
         name: "David Montgomery",
-        round: "6",
-        position: "RB"
-      },
-      {
-        name: "Jalen Hurts",
-        round: "11",
-        position: "QB"
-      },
-      {
-        name: "Zonovan Knight",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "Brandon Aiyuk",
-        round: "8",
-        position: "WR"
-      },
-      {
-        name: "James Cook",
-        round: "13",
-        position: "RB"
-      },
-      {
-        name: "Pat Freiermuth",
-        round: null,
-        position: "TE"
-      },
-      {
-        name: "Odell Beckham Jr.",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Terrace Marshall Jr.",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Trevor Lawrence",
-        round: null,
-        position: "QB"
-      },
-      {
-        name: "San Francisco",
-        round: "18",
-        position: "DEF"
-      },
-      {
-        name: "Chris Olave",
-        round: "12",
-        position: "WR"
-      },
-      {
-        name: "Khalil Herbert",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "Breece Hall",
-        round: "5",
-        position: "RB"
-      }
-    ]
-  },
-  {
-    name: 'Rustin',
-    players: [
-      {
-        name: "Tom Brady",
-        round: "14",
-        position: "QB"
-      },
-      {
-        name: "DeAndre Hopkins",
-        round: "11",
-        position: "WR"
-      },
-      {
-        name: "DK Metcalf",
-        round: "6",
-        position: "WR"
-      },
-      {
-        name: "Joshua Palmer",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Devin Singletary",
-        round: "13",
-        position: "RB"
-      },
-      {
-        name: "Raheem Mostert",
-        round: null,
-        position: "RB"
-      },
-      {
-        name: "Dalton Schultz",
-        round: "8",
-        position: "TE"
-      },
-      {
-        name: "DeVonta Smith",
         round: "10",
-        position: "WR"
+        position: "RB"
       },
       {
-        name: "Mike Williams",
-        round: "4",
-        position: "WR"
-      },
-      {
-        name: "Alvin Kamara",
+        name: "Travis Kelce",
         round: "1",
+        position: "TE"
+      },
+      {
+        name: "Ezekiel Elliott",
+        round: "18",
         position: "RB"
       },
       {
-        name: "Joe Mixon",
-        round: "2",
-        position: "RB"
-      },
-      {
-        name: "Josh Jacobs",
+        name: "Hollywood Brown",
         round: "9",
-        position: "RB"
+        position: "WR"
       },
       {
-        name: "Josh Allen",
-        round: "3",
-        position: "QB"
+        name: "Romeo Doubs",
+        round: "17",
+        position: "WR"
+      },
+      {
+        name: "David Njoku",
+        round: null,
+        position: "TE"
+      },
+      {
+        name: "Dameon Pierce",
+        round: "8",
+        position: "RB"
       },
       {
         name: "Tee Higgins",
@@ -663,29 +243,29 @@ const teams = [
         position: "WR"
       },
       {
-        name: "Jakobi Meyers",
-        round: "13",
-        position: "WR"
-      },
-      {
-        name: "Gerald Everett",
-        round: null,
-        position: "TE"
-      },
-      {
-        name: "Parris Campbell",
-        round: null,
-        position: "WR"
-      },
-      {
-        name: "Buffalo",
+        name: "Pittsburgh",
         round: "16",
         position: "DEF"
+      },
+      {
+        name: "Nico Collins",
+        round: "14",
+        position: "WR"
+      },
+      {
+        name: "Rhamondre Stevenson",
+        round: "11",
+        position: "RB"
+      },
+      {
+        name: "Alexander Mattison",
+        round: "6",
+        position: "RB"
       }
     ]
   },
   {
-    name: 'Roger',
+    name: 'Jace',
     players: [
       {
         name: "Tua Tagovailoa",
@@ -693,53 +273,153 @@ const teams = [
         position: "QB"
       },
       {
-        name: "Stefon Diggs",
+        name: "CeeDee Lamb",
         round: "2",
         position: "WR"
       },
       {
         name: "Jaylen Waddle",
-        round: "4",
+        round: "2",
         position: "WR"
       },
       {
-        name: "Jerry Jeudy",
-        round: "7",
+        name: "Garrett Wilson",
+        round: "13",
         position: "WR"
       },
       {
-        name: "Tony Pollard",
-        round: "17",
+        name: "Jahmyr Gibbs",
+        round: "3",
         position: "RB"
       },
       {
-        name: "Ezekiel Elliott",
-        round: "5",
+        name: "Bijan Robinson",
+        round: "1",
         position: "RB"
       },
       {
         name: "T.J. Hockenson",
-        round: "18",
+        round: "7",
         position: "TE"
       },
       {
-        name: "Marquise Goodwin",
+        name: "Terry McLaurin",
+        round: "6",
+        position: "WR"
+      },
+      {
+        name: "Jaxon Smith-Njigba",
+        round: "10",
+        position: "WR"
+      },
+      {
+        name: "Adam Thielen",
         round: null,
         position: "WR"
       },
       {
-        name: "Dak Prescott",
-        round: "16",
+        name: "De'Von Achane",
+        round: "15",
+        position: "RB"
+      },
+      {
+        name: "George Kittle",
+        round: "5",
+        position: "TE"
+      },
+      {
+        name: "Najee Harris",
+        round: "4",
+        position: "RB"
+      },
+      {
+        name: "Gus Edwards",
+        round: "18",
+        position: "WR"
+      },
+      {
+        name: "Geno Smith",
+        round: null,
         position: "QB"
       },
       {
-        name: "Marquise Brown",
-        round: "7",
+        name: "Jameson Williams",
+        round: "17",
         position: "WR"
       },
       {
-        name: "DJ Chark",
+        name: "Chuba Hubbard",
         round: null,
+        position: "RB"
+      },
+      {
+        name: "Dallas",
+        round: "16",
+        position: "DEF"
+      }
+    ]
+  },
+  {
+    name: 'Cody',
+    players: [
+      {
+        name: "Travis Etienne Jr.",
+        round: "5",
+        position: "RB"
+      },
+      {
+        name: "Jake Ferguson",
+        round: null,
+        position: "TE"
+      },
+      {
+        name: "Derrick Henry",
+        round: "2",
+        position: "RB"
+      },
+      {
+        name: "D'Andre Swift",
+        round: "10",
+        position: "RB"
+      },
+      {
+        name: "Tyler Lockett",
+        round: "8",
+        position: "WR"
+      },
+      {
+        name: "Deebo Samuel Sr.",
+        round: "4",
+        position: "WR"
+      },
+      {
+        name: "Ja'Marr Chase",
+        round: "1",
+        position: "WR"
+      },
+      {
+        name: "Matthew Stafford",
+        round: null,
+        position: "QB"
+      },
+      {
+        name: "Tyreek Hill",
+        round: "3",
+        position: "WR"
+      },
+      {
+        name: "Jared Goff",
+        round: null,
+        position: "WB"
+      },
+      {
+        name: "Trevor Lawrence",
+        round: "14",
+        position: "QB"
+      },
+      {
+        name: "Courtland Sutton",
+        round: "12",
         position: "WR"
       },
       {
@@ -748,24 +428,304 @@ const teams = [
         position: "RB"
       },
       {
-        name: "Calvin Ridley",
+        name: "George Pickens",
+        round: "9",
+        position: "WR"
+      },
+      {
+        name: "Jordan Addison",
+        round: "11",
+        position: "WR"
+      },
+      {
+        name: "Dallas Goedert",
+        round: "7",
+        position: "TE"
+      },
+      {
+        name: "New York",
+        round: null,
+        position: "DEF"
+      },
+      {
+        name: "San Francisco",
+        round: "18",
+        position: "DEF"
+      },
+    ]
+  },
+  {
+    name: 'Hunter',
+    players: [
+      {
+        name: "Jalen Hurts",
+        round: "11",
+        position: "QB"
+      },
+      {
+        name: "Amari Cooper",
+        round: "5",
+        position: "WR"
+      },
+      {
+        name: "Brandon Aiyuk",
+        round: "9",
+        position: "WR"
+      },
+      {
+        name: "Chris Godwin",
+        round: "4",
+        position: "WR"
+      },
+      {
+        name: "Kyren Williams",
+        round: null,
+        position: "RB"
+      },
+      {
+        name: "Ty Chandler",
+        round: null,
+        position: "RB"
+      },
+      {
+        name: "Trey McBride",
+        round: null,
+        position: "TE"
+      },
+      {
+        name: "Christian McCaffrey",
+        round: "1",
+        position: "RB"
+      },
+      {
+        name: "James Conner",
+        round: "6",
+        position: "RB"
+      },
+      {
+        name: "Devin Singletary",
+        round: null,
+        position: "RB"
+      },
+      {
+        name: "Jakobi Meyers",
+        round: "17",
+        position: "WR"
+      },
+      {
+        name: "Evan Engram",
+        round: "16",
+        position: "TE"
+      },
+      {
+        name: "Kyler Murray",
+        round: null,
+        position: "QB"
+      },
+      {
+        name: "Noah Brown",
         round: null,
         position: "WR"
       },
       {
-        name: "Zamir White",
+        name: "Buffalo",
+        round: "16",
+        position: "DEF"
+      },
+      {
+        name: "New York",
+        round: null,
+        position: "DEF"
+      },
+      {
+        name: "Josh Jacobs",
+        round: "2",
+        position: "BB"
+      },
+      {
+        name: "Michael Pittman Jr.",
+        round: "13",
+        position: "WR"
+      },
+      {
+        name: "Keenan Allen",
+        round: "3",
+        position: "WR"
+      }
+    ]
+  },
+  {
+    name: 'Rustin',
+    players: [
+      {
+        name: "Josh Allen",
+        round: "3",
+        position: "QB"
+      },
+      {
+        name: "DeAndre Hopkins",
+        round: "5",
+        position: "WR"
+      },
+      {
+        name: "DK Metcalf",
+        round: "4",
+        position: "WR"
+      },
+      {
+        name: "Puka Nacua",
+        round: null,
+        position: "WR"
+      },
+      {
+        name: "Jonathan Taylor",
+        round: "3",
+        position: "RB"
+      },
+      {
+        name: "Kenneth Walker III",
+        round: "7",
+        position: "RB"
+      },
+      {
+        name: "Dalton Schultz",
+        round: null,
+        position: "TE"
+      },
+      {
+        name: "DeVonta Smith",
+        round: "10",
+        position: "WR"
+      },
+      {
+        name: "Antonio Gibson",
+        round: "13",
+        position: "WR"
+      },
+      {
+        name: "Austin Ekeler",
+        round: "1",
+        position: "RB"
+      },
+      {
+        name: "Logan Thomas",
+        round: null,
+        position: "TE"
+      },
+      {
+        name: "Brandin Cooks",
+        round: "8",
+        position: "WR"
+      },
+      {
+        name: "C.J. Stroud",
+        round: null,
+        position: "QB"
+      },
+      {
+        name: "Odell Beckham Jr.",
+        round: "14",
+        position: "WR"
+      },
+      {
+        name: "Gerald Everett",
+        round: null,
+        position: "TE"
+      },
+      {
+        name: "Gerald Everett",
+        round: null,
+        position: "TE"
+      },
+      {
+        name: "Leonard Fournette",
         round: null,
         position: "RB"
       },
       {
-        name: "Jeff Wilson Jr.",
-        round: null,
+        name: "AJ Dillon",
+        round: "13",
         position: "RB"
       },
       {
-        name: "Zack Moss",
-        round: null,
+        name: "Philadelphia",
+        round: "15",
+        position: "DEF"
+      },
+      {
+        name: "Christian Kirk",
+        round: "11",
+        position: "WR"
+      }
+    ]
+  },
+  {
+    name: 'Roger',
+    players: [
+      {
+        name: "Dak Prescott",
+        round: "12",
+        position: "QB"
+      },
+      {
+        name: "Justin Jefferson",
+        round: "1",
+        position: "WR"
+      },
+      {
+        name: "Cooper Kupp",
+        round: "1",
+        position: "WR"
+      },
+      {
+        name: "Mike Evans",
+        round: "9",
+        position: "WR"
+      },
+      {
+        name: "Raheem Mostert",
+        round: "14",
         position: "RB"
+      },
+      {
+        name: "Isiah Pacheco",
+        round: "12",
+        position: "RB"
+      },
+      {
+        name: "Isaiah Likely",
+        round: null,
+        position: "TE"
+      },
+      {
+        name: "DJ Moore",
+        round: "4",
+        position: "WR"
+      },
+      {
+        name: "Jerome Ford",
+        round: null,
+        position: "BB"
+      },
+      {
+        name: "Breece Hall",
+        round: "5",
+        position: "RB"
+      },
+      {
+        name: "Rashee Rice",
+        round: "16",
+        position: "WR"
+      },
+      {
+        name: "Tony Pollard",
+        round: "11",
+        position: "RB"
+      },
+      {
+        name: "Joshua Palmer",
+        round: null,
+        position: "WR"
       },
       {
         name: "Denver",
@@ -773,9 +733,24 @@ const teams = [
         position: "DEF"
       },
       {
-        name: "Jonathan Taylor",
-        round: "1",
+        name: "Kansas City",
+        round: null,
+        position: "DEF"
+      },
+      {
+        name: "Cleveland",
+        round: null,
+        position: "DEF"
+      },
+      {
+        name: "Jerick McKinnon",
+        round: "14",
         position: "RB"
+      },
+      {
+        name: "Tank Dell",
+        round: null,
+        position: "WR"
       }
     ]
   }
