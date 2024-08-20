@@ -1,6 +1,7 @@
 // Import library functionality
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head';
+import Router from 'next/router';
 
 // Import custom functionality and variables
 import { empty } from '../helpers';
@@ -136,10 +137,10 @@ export default function Home() {
         let posStrength;
         switch (player.position) {
           case 'QB':
-            posStrength = 0.4;
+            posStrength = 0.5;
             break;
           case 'WR':
-            posStrength = 0.75;
+            posStrength = 0.8;
             break;
           case 'RB':
             posStrength = 1;
@@ -218,8 +219,8 @@ export default function Home() {
         <title>Tummy Sleeper's Keepers</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Tummy Sleeper's <span>Keepers</span></h1>
-      <p>The most accurate algorithmically generated keeper predictions for the Hateful 8 on the planet!</p>
+      <h1>Tummy Sleeper's <span>Keepers</span><button onClick={() => Router.push('/faq')}>FAQs</button></h1>
+      <p>The most accurate algorithmically generated keeper predictions for the Hateful 8 on the planet!  <strong>Predictions, not recommendations.</strong></p>
       {loading &&
         <div className="loading-container">
           <h3>Crunching the numbers...</h3>

@@ -25,9 +25,19 @@ body {
       text-transform: uppercase;
       letter-spacing: 1px;
       padding: 0 0 1rem;
+      display: flex;
 
       span {
         color: #DAA520;
+        margin-left: 0.65rem;
+      }
+
+      button {
+        border: solid 2px #DAA520;
+        color: #DAA520;
+        background: none;
+        border-radius: 3px;
+        margin-left: auto;
       }
     }
 
@@ -75,6 +85,29 @@ body {
       h3 {
         margin-bottom: 10px;
         font-size: 1.2rem;
+      }
+    }
+
+    &.faq {
+
+      hr {
+        opacity: 0.25;
+      }
+
+      > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        ul {
+          margin: 0.5rem 0;
+        }
+      }
+
+      pre {
+        background: white;
+        color: black;
+        padding: 0.5rem;
       }
     }
   }

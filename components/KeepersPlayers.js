@@ -28,7 +28,7 @@ export default function KeepersPlayers (props) {
                   <div><h3>{player.name}</h3></div>
                   <div><strong>Keep at round:</strong> {player.keeper ? `${player.draftRound} (Keeper)` : player.draftRound}</div>
                   <div><strong>Valued at round:</strong> {player.valueRound}</div>
-                  <div><strong>Keeper score:</strong> {(player.value * 10)}</div>
+                  <div><strong>Keeper score:</strong> {(player.value * 10).toFixed(2)}</div>
                   <div className="stat-table">
                     <table cellPadding={0} cellSpacing={0}>
                       <thead>
@@ -111,7 +111,7 @@ export default function KeepersPlayers (props) {
                     <th>{p.name}</th>
                     <td>{p.keeper ? `${p.draftRound} (Keeper)` : p.draftRound}</td>
                     <td>{p.valueRound === 0 ? "No value" : p.valueRound > 18 ? "> 18" : p.valueRound}</td>
-                    <td>{(p.value * 10).toFixed(2)}</td>
+                    <td>{p.value != 'NaN'? (p.value * 10).toFixed(2) : "0.00"}</td>
                   </tr>
                 ))}
                 </tbody>
