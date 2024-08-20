@@ -24,7 +24,7 @@ export default function Faq() {
       <hr />
       <h4>How do you calculate that?</h4>
       <ul>
-        <li><strong>Rounds</strong> - Rounds cannot be calculated by just dividing the position by 8.  Instead we have to divide by eight, and then check if that number has a remainder and if it does, we add 1 round to the number.<br /><strong>Example: </strong>
+        <li><strong>Rounds</strong> - Rounds cannot be calculated by just dividing the draft position by 8.  Instead we have to divide by eight, and then check if that number has a remainder and if it does, we add 1 round to the number.<br /><strong>Example: </strong>
           <ul>
             <li>27 / 8 = 3.375</li>
             <li>then we check modulo 1 (3.375 % 1 = 0.375)</li>
@@ -46,7 +46,7 @@ export default function Faq() {
           <pre>Number((((keepRound - valueRound) * positionValue) / rankValue) * 100).toFixed(2)</pre>
           So for the perfect keeper - meaning you are keeping the number one overall pick, who is a RB, in the 18th round - you would have:
           <pre>Number((((18 - 1) * 1.0) / 1) * 100).toFixed(2) = 1,700.00</pre>
-          For a more realistic example, let's say you can keep a WR with ADP of 30, and ECR of 25 in the 15th round, you would have:
+          For a more realistic example, let's say you can keep a WR with ADP of 30 and ECR of 25 (4th round) in the 15th round, you would have:
           <pre>Number((((15 - 4) * 0.8) / 28) * 100).toFixed(2) = 31.42</pre>
         </li>
       </ul>
