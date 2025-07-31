@@ -42,7 +42,7 @@ export default function Faq() {
         <li><strong>Valued at round</strong> - calculated by averaging the ADP and ECR and then determining the round at which that draft position would fall</li>
         <li><strong>Confidence</strong> - calculated by taking the top two players on a given team, by keeper score, and looking at the difference between them.  The larger the difference between their keeper scores, the greater the confidence in the pick prediction.</li>
         <li>
-          <strong>Keeper score</strong><br /> To determine the value of a keeper there are three factors the algorythm considers... player's position (we'll call this positionValue), their expected value (we'll call this rankValue), and distance between expected draft position (we'll call this valueRound) and position they can be kept at (we'll call this keepRound). Below are the current positional values applied by the algorythm:
+          <strong>Keeper score</strong><br /> To determine the value of a keeper there are three factors the algorithm considers... player's position (we'll call this positionValue), their expected value (we'll call this rankValue), and distance between expected draft position (we'll call this valueRound) and position they can be kept at (we'll call this keepRound). Below are the current positional values applied by the algorithm:
           <ul>
             <li>RB: 1.0</li>
             <li>WR: 0.8</li>
