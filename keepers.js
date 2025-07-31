@@ -1,43 +1,43 @@
 const keepers = [
   {
-    name: "Amon-Ra St. Brown",
-    round: "7",
-    position: "WR"
-  },
-  {
-    name: "Patrick Mahomes",
-    round: "7",
-    position: "QB"
-  },
-  {
-    name: "Rhamondre Stevenson",
-    round: "11",
+    name: "Travis Etienne Jr.",
+    round: "5",
     position: "RB"
   },
   {
-    name: "Garrett Wilson",
-    round: "13",
-    position: "WR"
+    name: "Breece Hall",
+    round: "5",
+    position: "RB"
   },
   {
-    name: "Tyreek Hill",
-    round: "3",
-    position: "WR"
+    name: "Kyren Williams",
+    round: "10",
+    position: "RB"
   },
   {
-    name: "Jalen Hurts",
-    round: "11",
-    position: "QB"
-  },
-  {
-    name: "DeVonta Smith",
+    name: "Puka Nacua",
     round: "10",
     position: "WR"
   },
   {
-    name: "Tony Pollard",
-    round: "11",
+    name: "De'Von Achane",
+    round: "15",
     position: "RB"
+  },
+  {
+    name: "Nico Collins",
+    round: "14",
+    position: "WR"
+  },
+  {
+    name: "Tyjae Spears",
+    round: "16",
+    position: "RB"
+  },
+  {
+    name: "Sam LaPorta",
+    round: "17",
+    position: "TE"
   },
 ];
 
