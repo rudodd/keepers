@@ -34,9 +34,9 @@ export default function Faq() {
         </li>
         <li><strong>Keep at round</strong> 
           <ul>
-            <li>Drafted players: the round they were drafted in the previous year</li>
+            <li>Drafted players: the round the player was drafted in the previous year</li>
             <li>Undrafted players: round 10</li>
-            <li>Keepers: the round of the players ADP for the previous year</li>
+            <li>Keepers: the round of the player's ADP for the previous year</li>
           </ul>
         </li>
         <li><strong>Valued at round</strong> - calculated by averaging the ADP and ECR and then determining the round at which that draft position would fall</li>
