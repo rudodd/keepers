@@ -4,9 +4,11 @@ import Head from 'next/head';
 import Router from 'next/router';
 
 // Import custom functionality and variables
-import { empty } from '../helpers';
+import { usePlayers } from '../utils/hooks/usePlayers';
+import { useData } from '../utils/hooks/useData';
+import { empty, getMetric, getValueRound, isKeeper,  } from '../utils/helpers';
 import teams from '../teams';
-import keepers from '../keepers';
+
 
 // Import components
 import CircularProgress from '@mui/material/CircularProgress';
@@ -17,103 +19,27 @@ import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
 export default function Home() {
 
   const [loading, setLoading] = useState(true);
-  const [currentData, setCurrentData] = useState(null);
-  const [previousData, setPreviousData] = useState(null);
-  const [ecrData, setECR] = useState(null);
   const [teamState, setTeamState] = useState([]);
   const [valuesArray, setValuesArray] = useState([])
   const [expanded, setExpanded] = useState(false);
-
-  // Fetch the current ADP for all players
-  const fetchCurrent = () => {
-    fetch('/api/adp-current')
-      .then((res) => {
-        res.json()
-          .then((data) => setCurrentData(data.players));
-      })
-  }
-
-  // Fetch last year's ADP for all players
-  const fetchPrevious = () => {
-    fetch('/api/adp-previous')
-      .then((res) => {
-        res.json()
-          .then((data) => setPreviousData(data.players));
-      })
-  }
-
-  // Fetch current ECR for all players
-  const fetchECR = () => {
-    fetch('/api/fp-ecr')
-      .then((res) => {
-        res.json()
-          .then((data) => setECR(data));
-      })
-  }
-
-  // Helper to convert names to a uniform lowercase string for comparison
-  const nameForCompare = (name) => {
-    return name.replaceAll(' II', '').replaceAll('III', '').replaceAll(' Jr.', '').replaceAll(' Sr.', '').replaceAll(' ', '').replaceAll('.', '').replaceAll(`'`, '').toLowerCase();
-  }
-
-  // Helper to check is a player was a keeper last year
-  const isKeeper = (player) => {
-    return !keepers.every((keeper) => nameForCompare(keeper.name) != nameForCompare(player.name));
-  }
-
-  // Helper to convert ADP/ECR into an object with ADP/ECR and round based on ADP/ECR
-  const createMetricObj = (metric, metricName) => {
-    let round = 0;
-    const roughRound = (Math.round(metric) / 8)
-    if (roughRound % 1 === 0) {
-      round = Math.trunc(roughRound);
-    } else {
-      round = Math.trunc(roughRound + 1);
-    }
-    return {[metricName]: Math.round(metric), round: round};
-  }
-
-  // Helper to get the ADP object for a given player
-  const getMetric = (player, metricName, keeper = false) => {
-    const data = metricName === 'adp' && keeper ? previousData : currentData;
-    let playerData = [];
-    if (metricName === 'adp') {
-      playerData = data.filter((prevPlayer) =>  nameForCompare(prevPlayer.name) == nameForCompare(player.name));
-    } else if (metricName === 'ecr') {
-      playerData = ecrData.filter((prevPlayer) => nameForCompare(prevPlayer.name) == nameForCompare(player.name));
-    }
-    return !empty(playerData) && metricName === 'adp' ? createMetricObj(playerData[0].adp, 'adp') 
-      :  !empty(playerData) && metricName === 'ecr' ? createMetricObj(playerData[0].ecr, 'ecr') 
-      : {adp: null, round: null};
-  }
-
-  // Helper to calculate the round at which a player is valued based on ADP and ECR
-  const getValueRound = (adp, ecr) => {
-    let round = 0;
-    const roughtRound = !empty(ecr.ecr) ? (Math.round(((adp.adp + ecr.ecr) / 2)) / 8) : Math.round(adp.adp) / 8;
-    if (roughtRound % 1 === 0) {
-      round = Math.trunc(roughtRound);
-    } else {
-      round = Math.trunc(roughtRound + 1);
-    }
-    return {round: round, rank: ((adp.adp + ecr.ecr) / 2)}
-  }
+  const { currentData, previousData, ecrData } = useData();
+  const players = usePlayers();
 
   // Build the array of team data to use for analysis
   const setTeams = () => {
     const tempTeamState = [];
     teams.forEach((team) => {
-      const players = []
-      team.players.forEach((player) => {
-        players.push({
-          ...player, 
-          adp: getMetric(player, 'adp'), 
-          ecr: getMetric(player, 'ecr'), 
-          valueRound: getValueRound(getMetric(player, 'adp'), getMetric(player, 'ecr')), 
-          round: isKeeper(player) ? getMetric(player, 'adp', true).round : player.round
+      const teamPlayers = [];
+      players.filter((player) => player.owner === team.name).forEach((player) => {
+        teamPlayers.push({
+          ...player,
+          adp: getMetric(previousData, currentData, ecrData, player, 'adp'),
+          ecr: getMetric(previousData, currentData, ecrData, player, 'ecr'),
+          valueRound: getValueRound(getMetric(previousData, currentData, ecrData, player, 'adp'), getMetric(previousData, currentData, ecrData, player, 'ecr')),
+          round: isKeeper(player) ? getMetric(previousData, currentData, ecrData, player, 'adp', true).round : player.round
         });
       })
-      team = {...team, players: players};
+      team = {...team, players: teamPlayers};
       tempTeamState.push(team);
     })
     setTeamState(tempTeamState.sort((a, b) => {
@@ -182,22 +108,10 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (empty(currentData)) {
-      fetchCurrent();
-    }
-    if (empty(previousData)) {
-      fetchPrevious();
-    }
-    if (empty(ecrData)) {
-      fetchECR();
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!empty(currentData) && !empty(previousData) && !empty(ecrData)) {
+    if (!empty(currentData) && !empty(previousData) && !empty(ecrData) && !empty(players)) {
       setTeams();
     }
-  }, [currentData, previousData, ecrData])
+  }, [currentData, previousData, ecrData, players])
 
   useEffect(() => {
     if (!empty(teamState)) {

@@ -24,13 +24,21 @@ export default function Faq() {
       <hr />
       <h4>How do you calculate that?</h4>
       <ul>
-        <li><strong>Rounds</strong> - Rounds cannot be calculated by just dividing the draft position by 8.  Instead we have to divide by eight, and then check if that number has a remainder and if it does, we add 1 round to the number.<br /><strong>Example: </strong>
+        <li><strong>Draft rounds</strong> - Rounds cannot be calculated by just dividing the draft position by 8.  Instead we have to divide by eight, and then check if that number has a remainder and if it does, we add 1 round to the number.<br /><strong>Example for draft position 27: </strong>
           <ul>
             <li>27 / 8 = 3.375</li>
             <li>then we check modulo 1 (3.375 % 1 = 0.375)</li>
             <li>then since 0.375 &gt; 0 we add 3 + 1 = 4</li>
             <li>so draft position 27 wil be drafted in round 4</li>
-          </ul></li>
+          </ul>
+        </li>
+        <li><strong>Keep at round</strong> 
+          <ul>
+            <li>Drafted players: the round they were drafted in the previous year</li>
+            <li>Undrafted players: round 10</li>
+            <li>Keepers: the round of the players ADP for the previous year</li>
+          </ul>
+        </li>
         <li><strong>Valued at round</strong> - calculated by averaging the ADP and ECR and then determining the round at which that draft position would fall</li>
         <li><strong>Confidence</strong> - calculated by taking the top two players on a given team, by keeper score, and looking at the difference between them.  The larger the difference between their keeper scores, the greater the confidence in the pick prediction.</li>
         <li>
