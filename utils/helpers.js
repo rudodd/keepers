@@ -79,11 +79,11 @@ export const empty = (variable) => {
   // Helper to calculate the round at which a player is valued based on ADP and ECR
   export const getValueRound = (adp, ecr) => {
     let round = 0;
-    const roughtRound = !empty(ecr.ecr) ? (Math.round(((adp.adp + ecr.ecr) / 2)) / 8) : Math.round(adp.adp) / 8;
-    if (roughtRound % 1 === 0) {
-      round = Math.trunc(roughtRound);
+    const roughRound = !empty(ecr.ecr) ? (Math.round(((adp.adp + ecr.ecr) / 2)) / 8) : !empty(adp.adp) ? Math.round(adp.adp) / 8 : 18;
+    if (roughRound % 1 === 0) {
+      round = Math.trunc(roughRound);
     } else {
-      round = Math.trunc(roughtRound + 1);
+      round = Math.trunc(roughRound + 1);
     }
     return {round: round, rank: ((adp.adp + ecr.ecr) / 2)}
   }
