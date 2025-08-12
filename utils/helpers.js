@@ -57,22 +57,13 @@ export const empty = (variable) => {
 
   // Helper to get the ADP object for a given player
   export const getMetric = (
-    previousData,
-    currentData,
-    ecrData,
+    data,
     player,
-    metricName,
-    keeper = false
+    isEcr = false
   ) => {
-    const data = metricName === 'adp' && keeper ? previousData : currentData;
-    let playerData = [];
-    if (metricName === 'adp') {
-      playerData = data.filter((prevPlayer) =>  nameForCompare(prevPlayer.name) == nameForCompare(player.name));
-    } else if (metricName === 'ecr') {
-      playerData = ecrData.filter((prevPlayer) => nameForCompare(prevPlayer.name) == nameForCompare(player.name));
-    }
-    return !empty(playerData) && metricName === 'adp' ? createMetricObj(playerData[0].adp, 'adp') 
-      :  !empty(playerData) && metricName === 'ecr' ? createMetricObj(playerData[0].ecr, 'ecr') 
+    const playerData = data.filter((prevPlayer) => nameForCompare(prevPlayer.name) == nameForCompare(player.name));
+    return !empty(playerData) && !isEcr ? createMetricObj(playerData[0].adp, 'adp') 
+      :  !empty(playerData) ? createMetricObj(playerData[0].ecr, 'ecr') 
       : {adp: null, round: null};
   }
 

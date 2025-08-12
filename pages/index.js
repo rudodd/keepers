@@ -22,7 +22,7 @@ export default function Home() {
   const [teamState, setTeamState] = useState([]);
   const [valuesArray, setValuesArray] = useState([])
   const [expanded, setExpanded] = useState(false);
-  const { currentData, previousData, ecrData } = useData();
+  const { adpData, ecrData } = useData();
   const players = usePlayers();
 
   // Build the array of team data to use for analysis
@@ -33,10 +33,11 @@ export default function Home() {
       players.filter((player) => player.owner === team.name).forEach((player) => {
         teamPlayers.push({
           ...player,
-          adp: getMetric(previousData, currentData, ecrData, player, 'adp'),
-          ecr: getMetric(previousData, currentData, ecrData, player, 'ecr'),
-          valueRound: getValueRound(getMetric(previousData, currentData, ecrData, player, 'adp'), getMetric(previousData, currentData, ecrData, player, 'ecr')),
-          round: isKeeper(player) ? getMetric(previousData, currentData, ecrData, player, 'adp', true).round : player.round
+          adp: getMetric(adpData, player),
+          ecr: getMetric(ecrData, player, true),
+          valueRound: getValueRound(getMetric(adpData, player), getMetric(ecrData, player, true)),
+          round: isKeeper(player) ? 'N/A' : player.round,
+          isKeeper: isKeeper(player)
         });
       })
       team = {...team, players: teamPlayers};
@@ -80,7 +81,7 @@ export default function Home() {
 
         // Helper to calculate the player's score
         const calculateScore = () => {
-          if (!empty(player.valueRound.round) && round != 1 && round != 2) {
+          if (!player.isKeeper && !empty(player.valueRound.round) && round != 1 && round != 2) {
             if ((round - player.valueRound.round) * posStrength > 0) {
               return Number((((round - player.valueRound.round) * posStrength) / player.valueRound.rank) * 10).toFixed(2);
             } else {
@@ -99,7 +100,7 @@ export default function Home() {
           ecrRound: player.ecr.round, 
           valueRound: player.valueRound.round, 
           draftRound: round, 
-          keeper: isKeeper(player)
+          keeper: player.isKeeper
         });
       })
       teamValues.push({name: team.name, players: playerValues.sort((a,b) => b.value - a.value)})
@@ -108,10 +109,10 @@ export default function Home() {
   }
 
   useEffect(() => {
-    if (!empty(currentData) && !empty(previousData) && !empty(ecrData) && !empty(players)) {
+    if (!empty(adpData) && !empty(ecrData) && !empty(players)) {
       setTeams();
     }
-  }, [currentData, previousData, ecrData, players])
+  }, [adpData, ecrData, players])
 
   useEffect(() => {
     if (!empty(teamState)) {

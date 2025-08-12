@@ -6,23 +6,14 @@ import { empty } from '../helpers';
 
 export function useData() {
 
-  const [currentData, setCurrentData] = useState(null);
-  const [previousData, setPreviousData] = useState(null);
+  const [adpData, setADP] = useState(null);
   const [ecrData, setECR] = useState(null);
 
     // Fetch the current ADP for all players
-  const fetchCurrent = () => {
+  const fetchADP = () => {
     fetch('/api/adp-current')
       .then((res) => {
-        res.json().then((data) => setCurrentData(data.players));
-      })
-  }
-
-  // Fetch last year's ADP for all players
-  const fetchPrevious = () => {
-    fetch('/api/adp-previous')
-      .then((res) => {
-        res.json().then((data) => setPreviousData(data.players));
+        res.json().then((data) => setADP(data.players));
       })
   }
 
@@ -35,11 +26,8 @@ export function useData() {
   }
 
   useEffect(() => {
-    if (empty(currentData)) {
-      fetchCurrent();
-    }
-    if (empty(previousData)) {
-      fetchPrevious();
+    if (empty(adpData)) {
+      fetchADP();
     }
     if (empty(ecrData)) {
       fetchECR();
@@ -47,8 +35,7 @@ export function useData() {
   }, []);
 
   return {
-    currentData,
-    previousData,
+    adpData,
     ecrData
   }
 }
