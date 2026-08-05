@@ -1,126 +1,148 @@
-﻿playerName,owner,position
-Lamar Jackson,Taylor,QB
-Joe Burrow,Jace,QB
-Sam Darnold,Calvin,QB
-Jared Goff,Cody,QB
-Baker Mayfield,Rustin,QB
-Jayden Daniels,Hunter,QB
-Kyler Murray,Roger,QB
-Bo Nix,Calvin,QB
-Michael Penix Jr.,Hunter,QB
-Caleb Williams,Cody,QB
-Josh Allen,Chris,QB
-Patrick Mahomes,Rustin,QB
-Kirk Cousins,Jace,QB
-Jalen Hurts,Hunter,QB
-Ja'Marr Chase,Chris,WR
-Justin Jefferson,Cody,WR
-Mike Evans,Hunter,WR
-Amon-Ra St. Brown,Roger,WR
-Ladd McConkey,Rustin,WR
-Drake London,Calvin,WR
-Jauan Jennings,Hunter,WR
-Malik Nabers,Taylor,WR
-Tee Higgins,Roger,WR
-Brian Thomas Jr.,Roger,WR
-George Pickens,Hunter,WR
-Courtland Sutton,Cody,WR
-Davante Adams,Jace,WR
-Josh Downs,Taylor,WR
-Jaxon Smith-Njigba,Taylor,WR
-Jordan Addison,Jace,WR
-Terry McLaurin,Chris,WR
-Adam Thielen,Rustin,WR
-Garrett Wilson,Cody,WR
-Jameson Williams,Cody,WR
-Jakobi Meyers,Chris,WR
-Ray-Ray McCloud III,Jace,WR
-DJ Moore,Jace,WR
-Zay Flowers,Hunter,WR
-Tyreek Hill,Rustin,WR
-DK Metcalf,Jace,WR
-Keenan Allen,Chris,WR
-Calvin Ridley,Chris,WR
-Jerry Jeudy,Cody,WR
-Jalen McMillan,Roger,WR
-Marvin Harrison Jr.,Rustin,WR
-Jayden Reed,Roger,WR
-Nico Collins,Calvin,WR
-Rome Odunze,Chris,WR
-Nick Westbrook-Ikhine,Cody,WR
-Keon Coleman,Rustin,WR
-Xavier Worthy,Calvin,WR
-M. Valdes-Scantling,Cody,WR
-DeAndre Hopkins,Hunter,WR
-Greg Dortch,Calvin,WR
-Tyler Lockett,Calvin,WR
-Khalil Shakir,Rustin,WR
-Puka Nacua,Rustin,WR
-A.J. Brown,Hunter,WR
-Deebo Samuel,Jace,WR
-Darnell Mooney,Jace,WR
-CeeDee Lamb,Calvin,WR
-Stefon Diggs,Rustin,WR
-Cooper Kupp,Taylor,WR
-Amari Cooper,Calvin,WR
-Chris Godwin,Rustin,WR
-Tank Dell,Cody,WR
-Rashee Rice,Chris,WR
-DeVonta Smith,Chris,WR
-Chris Olave,Chris,WR
-Jahmyr Gibbs,Chris,RB
-Bijan Robinson,Jace,RB
-Bucky Irving,Chris,RB
-Derrick Henry,Calvin,RB
-Jonathan Taylor,Roger,RB
-De'Von Achane,Jace,RB
-Aaron Jones Sr.,Jace,RB
-Rico Dowdle,Rustin,RB
-Josh Jacobs,Cody,RB
-Tyrone Tracy Jr.,Rustin,RB
-J.K. Dobbins,Hunter,RB
-Alexander Mattison,Jace,RB
-Tank Bigsby,Taylor,RB
-D'Andre Swift,Cody,RB
-Joe Mixon,Calvin,RB
-Travis Etienne Jr.,Cody,RB
-Brian Robinson Jr.,Jace,RB
-Austin Ekeler,Chris,RB
-Rachaad White,Rustin,RB
-Rhamondre Stevenson,Rustin,RB
-James Cook,Roger,RB
-Tyler Allgeier,Cody,RB
-Javonte Williams,Calvin,RB
-Cam Akers,Jace,RB
-Kenneth Gainwell,Hunter,RB
-Isaiah Davis,Chris,RB
-Patrick Taylor Jr.,Taylor,RB
-Chase Brown,Chris,RB
-Trey Benson,Chris,RB
-Tyjae Spears,Calvin,RB
-Travis Homer,Cody,RB
-Zack Moss,Calvin,RB
-Alvin Kamara,Hunter,RB
-James Conner,Calvin,RB
-Saquon Barkley,Hunter,RB
-Kendre Miller,Hunter,RB
-Isiah Pacheco,Rustin,RB
-Jerome Ford,Calvin,RB
-Kyren Williams,Hunter,RB
-Chuba Hubbard,Rustin,RB
-Brock Bowers,Cody,TE
-Trey McBride,Roger,TE
-Sam LaPorta,Hunter,TE
-George Kittle,Chris,TE
-Jonnu Smith,Taylor,TE
-T.J. Hockenson,Hunter,TE
-Mark Andrews,Rustin,TE
-Zach Ertz,Calvin,TE
-Tucker Kraft,Calvin,TE
-Noah Gray,Jace,TE
-Dalton Kincaid,Rustin,TE
-Dallas Goedert,Calvin,TE
-Travis Kelce,Jace,TE
-Evan Engram,Rustin,TE
-David Njoku,Hunter,TE
-Taysom Hill,Hunter,TE
+owner,name,position,round
+Chris,Jacoby Brissett,QB,
+Chris,Puka Nacua,WR,1
+Chris,Jaxon SmithNjigba,WR,4
+Chris,Chimere Dike,WR,
+Chris,Jahmyr Gibbs,RB,1
+Chris,Bucky Irving,RB,10
+Chris,George Kittle,TE,5
+Chris,TreVeyon Henderson,RB,6
+Chris,Rashee Rice,WR,6
+Chris,Joe Burrow,QB,8
+Chris,Brock Purdy,QB,
+Chris,Rico Dowdle,RB,
+Chris,Kyle Monangai,RB,15
+Chris,Dare Ogunbowale,RB,
+Chris,Brian Robinson,RB,12
+Chris,Emanuel Wilson,RB,
+Chris,Texans,DEF,18
+Chris,Eagles,DEF,16
+Rustin,Josh Allen,QB,4
+Rustin,A.J. Brown,WR,2
+Rustin,Stefon Diggs,WR,13
+Rustin,DK Metcalf,WR,6
+Rustin,Bijan Robinson,RB,1
+Rustin,Kyren Williams,RB,3
+Rustin,Travis Kelce,TE,12
+Rustin,Travis Etienne Jr.,RB,10
+Rustin,Deebo Samuel Sr.,WR,10
+Rustin,Dalton Kincaid,TE,18
+Rustin,Quinshon Judkins,RB,16
+Rustin,Ladd McConkey,WR,11
+Rustin,Khalil Shakir,WR,12
+Rustin,Gabe Davis,WR,
+Rustin,Justin Herbert,QB,
+Rustin,Ricky Pearsall,WR,7
+Rustin,Troy Franklin,WR,
+Rustin,Vikings,DEF,
+Rustin,Tucker Kraft,TE,15
+Roger,Jalen Hurts,QB,5
+Roger,DeVonta Smith,WR,8
+Roger,CeeDee Lamb,WR,1
+Roger,Rashid Shaheed,WR,11
+Roger,Chase Brown,RB,2
+Roger,Josh Jacobs,RB,3
+Roger,Colston Loveland,TE,
+Roger,Tetairoa McMillan,WR,6
+Roger,Woody Marks,RB,
+Roger,David Montgomery,RB,7
+Roger,Jawhar Jordan,RB,
+Roger,Kayshon Boutte,WR,
+Roger,Trevor Lawrence,QB,
+Roger,Braelon Allen,RB,16
+Roger,Keaton Mitchell,RB,
+Roger,Patriots,DEF,
+Roger,Bhayshul Tuten,RB,12
+Roger,Cam Skattebo,RB,9
+Roger,Garrett Wilson,WR,4
+Calvin,Baker Mayfield,QB,17
+Calvin,Nico Collins,WR,2
+Calvin,George Pickens,WR,7
+Calvin,Jauan Jennings,WR,11
+Calvin,Derrick Henry,RB,2
+Calvin,Omarion Hampton,RB,5
+Calvin,Trey McBride,TE,3
+Calvin,Mike Evans,WR,4
+Calvin,Wan'Dale Robinson,WR,
+Calvin,Jaylen Waddle,WR,7
+Calvin,D'Andre Swift,RB,8
+Calvin,Chris Godwin Jr.,WR,16
+Calvin,Sam Darnold,QB,
+Calvin,Bam Knight,RB,
+Calvin,Kareem Hunt,RB,
+Calvin,Zach Charbonnet,RB,10
+Calvin,Xavier Worthy,WR,9
+Calvin,Dolphins,DEF,
+Cody,Quinn Ewers,QB,
+Cody,Zay Flowers,WR,9
+Cody,Adonai Mitchell,WR,13
+Cody,Devin Duvernay,WR,
+Cody,Ashton Jeanty,RB,2
+Cody,Jaydon Blue,RB,18
+Cody,Gunnar Helm,TE,
+Cody,Tyrone Tracy Jr.,RB,11
+Cody,Brock Bowers,TE,15
+Cody,Breece Hall,RB,6
+Cody,Malik Washington,WR,17
+Cody,Justin Jefferson,WR,1
+Cody,Aaron Jones Sr.,RB,8
+Cody,DJ Moore,WR,7
+Cody,Tee Higgins,WR,3
+Cody,Jayden Reed,WR,13
+Cody,Jaguars,DEF,
+Cody,Bills,DEF,18
+Jace,Dak Prescott,QB,13
+Jace,Chris Olave,WR,12
+Jace,AmonRa St. Brown,WR,2
+Jace,KaVontae Turpin,WR,11
+Jace,James Cook III,RB,4
+Jace,Jaylen Warren,RB,14
+Jace,Kyle Pitts Sr.,TE,
+Jace,Saquon Barkley,RB,1
+Jace,Courtland Sutton,WR,7
+Jace,Marvin Harrison Jr.,WR,5
+Jace,Theo Johnson,TE,
+Jace,Brian Thomas Jr.,WR,9
+Jace,Quentin Johnston,WR,
+Jace,Jaxson Dart,QB,
+Jace,Terry McLaurin,WR,6
+Jace,Jordan Mason,RB,10
+Jace,Jared Goff,QB,
+Jace,Rams,DEF,
+Jace,Sam LaPorta,TE,9
+Taylor,Jameson Williams,WR,6
+Taylor,Ja'Marr Chase,WR,1
+Taylor,Romeo Doubs,WR,
+Taylor,De'Von Achane,RB,2
+Taylor,Tyler Allgeier,RB,14
+Taylor,Juwan Johnson,TE,
+Taylor,Jonathan Taylor,RB,3
+Taylor,Bo Nix,QB,18
+Taylor,Jayden Higgins,WR,13
+Taylor,Christian Watson,WR,
+Taylor,Cade Otton,TE,
+Taylor,Parker Washington,WR,12
+Taylor,Tre Tucker,WR,
+Taylor,Rome Odunze,WR,9
+Taylor,Jordan Love,QB,
+Taylor,Buccaneers,DEF,
+Taylor,Falcons,DEF,
+Hunter,Drake Maye,QB,
+Hunter,Michael Wilson,WR,
+Hunter,Jakobi Meyers,WR,8
+Hunter,Drake London,WR,2
+Hunter,Javonte Williams,RB,
+Hunter,Kenny Gainwell,RB,
+Hunter,Dallas Goedert,TE,
+Hunter,Christian McCaffrey,RB,1
+Hunter,RJ Harvey,RB,7
+Hunter,Emeka Egbuka,WR,10
+Hunter,Michael Pittman Jr.,WR,13
+Hunter,Tyler Warren,TE,15
+Hunter,Matthew Stafford,QB,
+Hunter,Michael Carter,RB,
+Hunter,Audric Estime,RB,
+Hunter,Saints,DEF,
+Hunter,Chiefs,DEF,
+Hunter,Broncos,DEF,16
+Hunter,Davante Adams,WR,4

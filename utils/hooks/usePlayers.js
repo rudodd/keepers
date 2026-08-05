@@ -8,7 +8,6 @@ import { empty } from '../helpers';
 export function usePlayers() {
 
   const [players, setPlayers] = useState(null);
-  const [draft, setDraft] = useState(null);
 
   // Fetch player data from csv
   const fetchPlayers = async () => {
@@ -19,46 +18,7 @@ export function usePlayers() {
         header: true,   // Set to true if your CSV has a header row
         dynamicTyping: true, // Automatically convert numbers and booleans
         complete: (results) => {
-          const mappedPlayers = results.data.map((player) => {
-            const draftMatch = draft.find((dPlayer) => player.playerName === dPlayer.playerName);
-            if (!empty(draftMatch)) {
-              return {
-                ...player,
-                name: player.playerName,
-                round: draftMatch.round
-              }
-            } else {
-              return {
-                ...player,
-                name: player.playerName,
-                round: null
-              }
-            }
-          })
-          setPlayers(mappedPlayers);
-          if (results.errors.length) {
-            console.warn("PapaParse Errors:", results.errors);
-          }
-        },
-        error: (err, file) => {
-          console.error("PapaParse Error:", err, file);
-        }
-      });
-    } catch (err) {
-      console.error("Fetch or parsing failed:", err);
-    }
-  };
-
-  // Fetch draft from csv
-  const fetchDraft = async () => {
-    try {
-      const csvFilePath = '/draft.csv'; 
-      Papa.parse(csvFilePath, {
-        download: true, // Required to fetch from a URL
-        header: true,   // Set to true if your CSV has a header row
-        dynamicTyping: true, // Automatically convert numbers and booleans
-        complete: (results) => {
-          setDraft(results.data);
+          setPlayers(results.data);
           if (results.errors.length) {
             console.warn("PapaParse Errors:", results.errors);
           }
@@ -73,16 +33,10 @@ export function usePlayers() {
   };
 
   useEffect(() => {
-    if (empty(draft)) {
-      fetchDraft();
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!empty(draft) && empty(players)) {
+    if (empty(players)) {
       fetchPlayers();
     }
-  }, [draft]);
+  }, []);
 
   return players;
 }
